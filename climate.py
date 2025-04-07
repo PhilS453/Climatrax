@@ -2,18 +2,12 @@ from weather import Weather
 
 class Climate:
 
-    def __init__(self, droughtData, wildfireData, floodData):
-        self.droughtData = droughtData
-        self.wildfireData = wildfireData
-        self.floodData = floodData
-
-    #get climate data from api
-    def getClimateData():
-        pass
-
-    #compare climate data to analyze trends
-    def compareClimateData():
-        pass
+    #leave getFloodData and compareClimateData alone for now
+    #try to get either drought or wildfire API working
+    #i'd recommend testing API calls by printing to console or saving the JSON to the file directory
+    #however, please do not commit any JSONs to the repo yet
+    #once you know the function is calling the API, call displayClimateData() and pass the JSON
+    #feel free to delete this before coding
 
     def getDroughtData():
         pass
@@ -22,4 +16,13 @@ class Climate:
         pass
 
     def getFloodData():
+        pass
+
+    #compare climate data to analyze trends
+    def compareClimateData():
+        pass
+
+    #send climate data to frontend to display
+    def displayClimateData(climateData):
+        #use flask to send climate data JSON to frontend
         pass
