@@ -1,0 +1,45 @@
+body{
+    font-family: Georgia;
+    font-weight: bold;
+    background-color: hsl(240, 100%, 90%);
+    margin: 0;
+}
+header{
+    background-color: white;
+    font-size: 3em;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header img{
+    width: 250px;
+    height: auto;
+}
+#navbar{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.navbutton{
+    color: white;
+    background-color: hsl(0, 0%, 55%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 125px;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    border: 5px solid hsl(0, 0%, 35%);
+    border-radius: 25px;
+    margin: 10px;
+}
+.navbutton:hover{
+    background-color: hsl(0, 0%, 35%);
+    border: 5px solid hsl(0, 0%, 25%);
+}

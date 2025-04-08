@@ -1,6 +1,6 @@
 class News:
 
-    #get the news from api
+    #get the news from the api
     def getNews():
         pass
     
