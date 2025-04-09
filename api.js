@@ -1,4 +1,12 @@
-//button variables go here
+const searchForm = document.getElementById("searchForm");
+
+//event listener for the search form
+searchForm.addEventListener("submit", function(event) {
+    event. preventDefault(); //prevents a page refresh every submission
+
+    const userInput = document.getElementById("searchInput").value; //user's search input
+    console.log(userInput);
+})
 
 //the flow is getLocation => searchLocation => displaySearchResults => fetchResults => displayResults
 

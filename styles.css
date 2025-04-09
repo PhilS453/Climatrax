@@ -24,10 +24,11 @@ header img{
     text-align: center;
     align-items: center;
     padding-bottom: 10px;
+    border-bottom: 5px solid rgb(138, 138, 138);
 }
 .navbutton{
     color: white;
-    background-color: hsl(0, 0%, 55%);
+    background-color: hsl(29, 55%, 42%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,23 +37,30 @@ header img{
     text-align: center;
     text-decoration: none;
     padding: 15px;
-    border: 5px solid hsl(0, 0%, 35%);
+    border: 5px solid hsl(29, 55%, 35%);
     border-radius: 25px;
     margin: 10px;
 }
 .navbutton:hover{
-    background-color: hsl(0, 0%, 35%);
-    border: 5px solid hsl(0, 0%, 25%);
+    background-color: hsl(29, 55%, 35%);
+    border: 5px solid hsl(29, 55%, 22%);
 }
 #searchContainer{
+    background-color: white;
+    width: 500px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 50px;
+    margin: 5px auto;
+    padding: 25px;
+    border-radius: 25px;
 }
 #searchTitle{
     font-size: 2em;
     margin-bottom: 10px;
 }
 #searchInput{
+    width: 250px;
 }
