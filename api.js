@@ -1,3 +1,12 @@
+const searchForm = document.getElementById("searchForm");
+
+//event listener for the search form
+searchForm.addEventListener("submit", function(event) {
+    event. preventDefault(); //prevents a page refresh every submission
+
+    const userInput = document.getElementById("searchInput").value; //user's search input
+    console.log(userInput);
+})
 
 //this function fetches location data from Flask API
 
@@ -19,9 +28,6 @@ async function getLocation(query){
     }
 
 }
-
-
-//button variables go here
 
 //the flow is getLocation => searchLocation => displaySearchResults => fetchResults => displayResults
 
