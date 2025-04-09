@@ -10,12 +10,14 @@
 <body>
     <header>
         <div id="head">🌍 Climatrak 🌍</div>
+        <div id="pageTitle">Search</div>
     </header>
 
     <nav id="navbar">
         <a href="/index.html" class="navbutton">Home</a>
         <a href="/news.html" class="navbutton">News</a>
         <a href="/resources.html" class="navbutton">Resources</a>
+        <a href="templates/location.html" class="navbutton">Location</a>
     </nav>
 
     <div id="searchContainer">
@@ -26,9 +28,28 @@
             <button type="submit">Search</button>
         </form>
     </div>
+
+    <div class="resultContainer" onclick="redirect(`rochester-hills`)">
+        <div class="resultName">
+            Rochester Hills, Michigan
+        </div>
+    </div>
+    <div class="resultContainer" onclick="redirect(`auburn-hills`)">
+        <div class="resultName">
+            Auburn Hills, Michigan
+        </div>
+    </div>
+    <div class="resultContainer" onclick="redirect(`macomb`)">
+        <div class="resultName">
+            Macomb, Michigan
+        </div>
+    </div>
+    <div class="resultContainer" onclick="redirect(`detroit`)">
+        <div class="resultName">
+            Detroit, Michigan
+        </div>
+    </div>
     
 <script src="api.js"></script>
 </body>
 </html>
-
-

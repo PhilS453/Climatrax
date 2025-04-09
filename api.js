@@ -5,8 +5,14 @@ searchForm.addEventListener("submit", function(event) {
     event. preventDefault(); //prevents a page refresh every submission
 
     const userInput = document.getElementById("searchInput").value; //user's search input
-    console.log(userInput);
+    console.log("User searched:", userInput);
 })
+
+//html onclick calls this; redirects to each location's weather page
+function redirect(location)
+{
+    window.location.href = `/location/${location}`;
+}
 
 //this function fetches location data from Flask API
 
