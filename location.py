@@ -19,16 +19,23 @@ def search_location(query):
         return ({"error","Error decoding CityDB.json"}), 500
     
     query = query.lower()
+    results = []
     for location in city_data:
-        if(query == location.get('city', '').lower() or 
-           query == location.get('state','').lower() or
-           query == location.get('country','')):
+        if(query == location.get('country','')):
             result ={
                 "city": location.get('city',''),
                 "state": location.get('state',''),
-                "country": location.get('country','')
+                "country": location.get('country',''),
+                "longitude":location.get('lng',''),
+                "latitude":location.get('lat',''),
+                "population": location.get('population','')
             }
-            return jsonify(result)
+            results.append(results)
+    if results:
+        #debug to verify list is populated
+        for x in results:
+            print(x)
+        return (results,200)
         
     return ({"error": "Location not supported"}), 404
 
