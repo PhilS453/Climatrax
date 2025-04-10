@@ -8,12 +8,17 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/get_location',methods =['GET'])
+# @app.route('/get_location',methods =['GET'])
+# def get_location():
+#     query = request.args.get('query')
+#     result, status_code = search_location(query)
+#     return jsonify(result), status_code
+@app.route('/get_location', methods=['GET'])
 def get_location():
     query = request.args.get('query')
+    print(f"Debug: Received query {query}")  # Debug statement
     result, status_code = search_location(query)
     return jsonify(result), status_code
-
 
 
 if __name__ == "__main__":

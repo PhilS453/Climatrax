@@ -2,11 +2,23 @@ const searchForm = document.getElementById("searchForm");
 
 //event listener for the search form
 searchForm.addEventListener("submit", function(event) {
-    event. preventDefault(); //prevents a page refresh every submission
-
-    const userInput = document.getElementById("searchInput").value; //user's search input
+    event.preventDefault();
+    const userInput = document.getElementById("searchInput").value;
     console.log("User searched:", userInput);
-})
+    //go to climatrax.py and you can see /get_location
+    fetch(`/get_location?query=${encodeURIComponent(userInput)}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("API response:", data);
+        displayResults(data);
+    })
+    .catch(error => console.error("Fetch error:", error));
+});
 
 //html onclick calls this; redirects to each location's weather page
 function redirect(location)
@@ -14,26 +26,7 @@ function redirect(location)
     window.location.href = `/location/${location}`;
 }
 
-//this function fetches location data from Flask API
 
-async function getLocation(query){
-    try{
-        // make the GET request
-        const response = await fetch('/get_location?query=${encodeURIComponent(query)}',{
-            method: 'GET',
-            headers: {
-                'Content_Type' : 'application/json'
-            }
-        });
-        if(!response.ok){
-            throw new Error('HTTP error! status: ${response.status}')
-        }
-    }catch (error){
-        console.error('Error fetching location:',error)
-        return { error: error.message}; 
-    }
-
-}
 
 //the flow is getLocation => searchLocation => displaySearchResults => fetchResults => displayResults
 
