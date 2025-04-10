@@ -120,3 +120,59 @@ header{
     font-size: 3em;
     margin-bottom: 25px;
 }
+#climateContainer{
+    background-color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px black;
+}
+#climateTitle, #apiTitle{
+    font-size: 2em;
+    text-decoration: underline;
+    margin: 0 auto
+}
+.climateLink, .apiLink{
+    font-size: 1.25em;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+.climateLink:hover, .apiLink:hover{
+    color: blue;
+    text-decoration: underline;
+}
+#apiContainer{
+    background-color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px black;
+}
+#warningContainer{
+    background-color: white;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px black;
+}
