@@ -1,4 +1,10 @@
 from weather import Weather
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+WILDFIRE_API_KEY = os.getenv('WILDFIRE_API_KEY')
 
 class Climate:
 
@@ -12,7 +18,7 @@ class Climate:
     def getDroughtData():
         pass
     
-    def getWildfireData():
+    def getWildfireData(cityName):
         pass
 
     def getFloodData():
