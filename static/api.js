@@ -1,5 +1,8 @@
-const searchForm = document.getElementById("searchForm");
+//search form is the search box where users search for a country
 
+const searchForm = document.getElementById("searchForm");
+//result container will hold all / some results
+const resultContainer = docoument.getElementById('resultContainer')
 //event listener for the search form
 searchForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -49,6 +52,10 @@ function fetchResults()
 
 function displayResults(searchStatus, results)
 {
+
+
+
+
     //code this after fetchResults implementation
     //if searchStatus=true (the location was found), display search results
     //iterate through search results to display a DOM element per result
