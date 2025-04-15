@@ -2,12 +2,12 @@ body{
     user-select: none;
     font-family: Georgia;
     font-weight: bold;
-    background-color: hsl(29, 41%, 39%);
+    background-color: hsl(240, 83%, 87%);
     margin: 0;
 }
 header{
     color: white;
-    background-color: hsl(240, 83%, 84%);
+    background-color: hsl(240, 83%, 80%);
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@ header{
 }
 .navbutton{
     color: white;
-    background-color: hsl(29, 41%, 39%);
+    background-color: hsl(240, 100%, 74%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,13 +41,13 @@ header{
     text-align: center;
     text-decoration: none;
     padding: 15px;
-    border: 5px solid hsl(29, 41%, 30%);
+    border: 5px solid hsl(240, 100%, 70%);
     border-radius: 25px;
     margin: 10px;
 }
 .navbutton:hover{
-    background-color: hsl(29, 41%, 30%);
-    border: 5px solid hsl(29, 41%, 20%);
+    background-color: hsl(240, 100%, 70%);
+    border: 5px solid hsl(240, 100%, 65%);
 }
 #searchContainer{
     background-color: white;
@@ -72,7 +72,7 @@ header{
     width: 250px;
 }
 .resultContainer{
-    background-color: hsla(0, 0%, 60%);
+    background-color: hsl(240, 100%, 74%);
     width: 400px;
     height: 100px;
     display: flex;
@@ -80,13 +80,13 @@ header{
     justify-content: center;
     text-align: center;
     margin: 15px auto;
-    border: 5px solid hsl(0, 0%, 35%);
+    border: 5px solid hsl(240, 100%, 70%);
     border-radius: 5px;
     box-shadow: 2px 2px 5px black;
 }
 .resultContainer:hover{
-    background-color: hsl(0, 0%, 45%);
-    border: 5px solid hsl(0, 0%, 25%);
+    background-color: hsl(240, 100%, 70%);
+    border: 5px solid hsl(240, 100%, 65%);
     cursor: pointer;
 }
 .resultName{
@@ -119,4 +119,90 @@ header{
 #tempText, #conditionText{
     font-size: 3em;
     margin-bottom: 25px;
+}
+#climateContainer{
+    background-color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px black;
+}
+#climateTitle, #apiTitle, .newsHeader{
+    font-size: 2em;
+    text-decoration: underline;
+    margin: 0 auto;
+}
+.climateLink, .apiLink{
+    font-size: 1.25em;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+.climateLink:hover, .apiLink:hover, .newsLink:hover{
+    color: blue;
+    text-decoration: underline;
+}
+#apiContainer{
+    background-color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px black;
+}
+#warningContainer{
+    background-color: white;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px black;
+}
+.newsContainer{
+    background-color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px black;
+}
+.newsLink{
+    font-size: 1.25em;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+#newsTitle{
+    font-size: 2em;
+    text-decoration: underline;
+    margin: 0 auto;
+    margin-top: 5px;
 }
