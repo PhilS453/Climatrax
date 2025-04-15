@@ -1,16 +1,20 @@
 //search form is the search box where users search for a country
-
 const searchForm = document.getElementById("searchForm");
 //result container will hold all / some results
 const resultContainer = document.getElementById('resultContainer');
+
+//event listener for the search form
+searchForm.addEventListener("submit", function(event) {
+    event. preventDefault(); //prevents a page refresh every submission
+
+    const userInput = document.getElementById("searchInput").value; //user's search input
+    console.log("User searched:", userInput);
 
 //html onclick calls this; redirects to each location's weather page
 function redirect(location)
 {
     window.location.href = `/location/${location}`;
 }
-
-
 
 //the flow is getLocation => searchLocation => displaySearchResults => fetchResults => displayResults
 
