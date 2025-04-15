@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildfire Data</title>
+</head>
+<body>
+    <h1>Wildfire Data for San Francisco</h1>
+    <p>Total Wildfires Detected: {{ wildfire_count }}</p>
+
+    <!-- Table displaying the data -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Bright TI4</th>
+                <th>Scan</th>
+                <th>Track</th>
+                <th>Acquisition Date</th>
+                <th>Acquisition Time</th>
+                <th>Satellite</th>
+                <th>Instrument</th>
+                <th>Confidence</th>
+                <th>Version</th>
+                <th>Bright TI5</th>
+                <th>FRP</th>
+                <th>Day/Night</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for wildfire in data %}
+            <tr>
+                <td>{{ wildfire.latitude }}</td>
+                <td>{{ wildfire.longitude }}</td>
+                <td>{{ wildfire.bright_ti4 }}</td>
+                <td>{{ wildfire.scan }}</td>
+                <td>{{ wildfire.track }}</td>
+                <td>{{ wildfire.acq_date }}</td>
+                <td>{{ wildfire.acq_time }}</td>
+                <td>{{ wildfire.satellite }}</td>
+                <td>{{ wildfire.instrument }}</td>
+                <td>{{ wildfire.confidence }}</td>
+                <td>{{ wildfire.version }}</td>
+                <td>{{ wildfire.bright_ti5 }}</td>
+                <td>{{ wildfire.frp }}</td>
+                <td>{{ wildfire.daynight }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
