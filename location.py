@@ -10,26 +10,35 @@ def search_location(query):
 
     if not query:
         return ({"error": "No query provided"}), 400
-    
+    print(f"Debug: Searching for {query}")
     try:
         with open('CityDB.json','r')as file:
             city_data = json.load(file)
+        print(f"Debug: Loaded {len(city_data)} entries from CityDB.json")
     except FileNotFoundError:
         return ({"error": "CityDb.json not found"}), 500
     except json.JSONDecodeError:
         return ({"error","Error decoding CityDB.json"}), 500
     
-    query = query.lower()
+    
+    results = []
     for location in city_data:
-        if(query == location.get('city', '').lower() or 
-           query == location.get('state','').lower() or
-           query == location.get('country','')):
+        if(query == location.get('country','')):
             result ={
                 "city": location.get('city',''),
                 "state": location.get('state',''),
-                "country": location.get('country','')
+                "country": location.get('country',''),
+                "longitude":location.get('lng',''),
+                "latitude":location.get('lat',''),
+                "population": location.get('population','')
             }
-            return jsonify(result)
+            results.append(result)
+    print(f"Debug: Found {len(results)} matches for {query}")
+    if results:
+        #debug to verify list is populated
+        for x in results:
+            print(x)
+        return (results,200)
         
     return ({"error": "Location not supported"}), 404
 
