@@ -2,26 +2,7 @@
 
 const searchForm = document.getElementById("searchForm");
 //result container will hold all / some results
-const resultContainer = document.getElementById('resultContainer')
-//event listener for the search form
-// searchForm.addEventListener("submit", function(event) {
-//     event.preventDefault();
-//     const userInput = document.getElementById("searchInput").value;
-//     console.log("User searched:", userInput);
-//     //go to climatrax.py and you can see /get_location
-//     fetch(`/get_location?query=${encodeURIComponent(userInput)}`, {
-//         method: 'GET',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log("API response:", data);
-//         displayResults(data);
-//     })
-//     .catch(error => console.error("Fetch error:", error));
-// });
+const resultContainer = document.getElementById('resultContainer');
 
 //html onclick calls this; redirects to each location's weather page
 function redirect(location)
