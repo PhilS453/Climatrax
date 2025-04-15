@@ -1,14 +1,7 @@
-//search form is the search box where users search for a country
-const searchForm = document.getElementById("searchForm");
-//result container will hold all / some results
-const resultContainer = document.getElementById('resultContainer');
-
-//event listener for the search form
-searchForm.addEventListener("submit", function(event) {
-    event. preventDefault(); //prevents a page refresh every submission
-
-    const userInput = document.getElementById("searchInput").value; //user's search input
-    console.log("User searched:", userInput);
+// //search form is the search box where users search for a country
+// const searchForm = document.getElementById("searchForm");
+// //result container will hold all / some results
+// const resultContainer = document.getElementById('resultContainer');
 
 //html onclick calls this; redirects to each location's weather page
 function redirect(location)
@@ -24,7 +17,7 @@ function getLocation()
 {
     const userInput = document.getElementById("searchInput").value;
     if(userInput){
-        searchLocation(userInput);
+        fetchResults(userInput);
         console.log("User searched:", userInput);
 
     }else{
@@ -32,14 +25,12 @@ function getLocation()
     }
 }
 
-function searchLocation(query)
-{
-    fetchResults(query);
-}
-
 //fetches search results from the backend to display on the website
 function fetchResults(query)
 {
+    //accept different capitalization of strings
+    query = query.charAt(0).toUpperCase() + query.slice(1).toLowerCase();
+
     console.log("Fetching results of query")
     fetch(`/get_location?query=${encodeURIComponent(query)}`, {
         method: 'GET',
