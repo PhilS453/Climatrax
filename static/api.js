@@ -29,7 +29,7 @@ function getLocation()
 function fetchResults(query)
 {
     //accept different capitalization of strings
-    query = query.charAt(0).toUpperCase() + query.slice(1).toLowerCase();
+    query = query.toLowerCase().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
 
     console.log("Fetching results of query")
     fetch(`/get_location?query=${encodeURIComponent(query)}`, {
