@@ -225,3 +225,24 @@ header{
     border-radius: 25px;
     box-shadow: 5px 5px 25px black;
 }
+#wildfireBtn{
+    background-color: hsl(240, 100%, 74%);
+    color: white;
+    border: 5px solid hsl(240, 100%, 70%);
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 25px;
+}
+#wildfireBtn:hover{
+    cursor: pointer;
+    background-color: hsl(240, 100%, 70%);
+    border: 5px solid hsl(240, 100%, 65%);
+}
