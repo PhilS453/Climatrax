@@ -2,12 +2,6 @@
 countryName = document.getElementById("countryName");
 //"enter a country/city" text
 searchTitle = document.getElementById("searchTitle");
-//weather title display
-weatherTitle = document.getElementById("weatherTitle");
-//temperature text display
-tempText = document.getElementById("tempText");
-//condition text display
-conditionText = document.getElementById("conditionText");
 
 //checks if user's search is valid
 var searchedCountry = false;
@@ -17,8 +11,7 @@ var countryData;
 //html onclick calls this; redirects to each location's weather page
 function redirect(location)
 {
-    window.location.href = `/location`;
-    loadWeatherPage(location);
+    window.location.href = `/location?city=${encodeURIComponent(location)}`;
 }
 
 //the flow is getLocation => searchLocation => displaySearchResults => fetchResults => displayResults
@@ -65,6 +58,8 @@ function fetchResults(query)
             countryData = data;
             searchedCountry = true;
             document.getElementById("searchInput").value = "";
+
+            createResultDivs(countryData);
         }
     })
     .catch(error => {
@@ -96,16 +91,23 @@ function displayResults(results)
         return;
     }
 
-    //city.city stores each city's name
-    filteredResults.forEach(city => {
+    //create the search result divs
+    createResultDivs(filteredResults);
+}
+
+function createResultDivs(results)
+{
+    const searchResults = document.getElementById("searchResults");
+    searchResults.innerHTML = "";
+    searchResults.style.display = "flex";
+
+    results.forEach(city => {
         const cityDiv = document.createElement("div");
         cityDiv.className = "resultContainer";
-        cityDiv.setAttribute("data-location", city.city);
         cityDiv.textContent = city.city;
         cityDiv.style.color = "white";
         cityDiv.onclick = () => redirect(city.city);
         searchResults.appendChild(cityDiv);
-        searchResults.style.display = "flex";
     });
 }
 
@@ -116,9 +118,3 @@ searchForm.addEventListener("submit", function (event) {
     getLocation();
     displayResults(countryData);
 });
-
-function loadWeatherPage(location)
-{
-    weatherTitle.textContent = `Weather in ${location}`;
-    console.log("weather title:", weatherTitle);
-}
