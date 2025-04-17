@@ -20,34 +20,16 @@
     </nav>
 
     <div id="searchContainer">
+        <div id="countryName">test</div>
         <div id="searchTitle">Enter a Country:</div>
 
         <form id="searchForm">
-            <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+            <input type="text" id="searchInput" placeholder="Search..." autocomplete="on">
             <button type="submit">Search</button>
         </form>
     </div>
 
-    <div class="resultContainer" onclick="redirect(`rochester-hills`)">
-        <div class="resultName">
-            Rochester Hills, Michigan
-        </div>
-    </div>
-    <div class="resultContainer" onclick="redirect(`auburn-hills`)">
-        <div class="resultName">
-            Auburn Hills, Michigan
-        </div>
-    </div>
-    <div class="resultContainer" onclick="redirect(`macomb`)">
-        <div class="resultName">
-            Macomb, Michigan
-        </div>
-    </div>
-    <div class="resultContainer" onclick="redirect(`detroit`)">
-        <div class="resultName">
-            Detroit, Michigan
-        </div>
-    </div>
+    <div id="searchResults" style="display:none;"></div>
     
 <script src="/static/api.js"></script>
 <script src="/static/api.js"></script>
