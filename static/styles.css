@@ -91,7 +91,7 @@ header{
 }
 .resultName{
     color: white;
-    font-size: 1.25em;
+    font-size: 1.75em;
 }
 #weatherContainer{
     background-color: white;
@@ -205,4 +205,23 @@ header{
     text-decoration: underline;
     margin: 0 auto;
     margin-top: 5px;
+}
+#countryName{
+    font-size: 1.5em;
+    display: none;
+}
+#searchResults{
+    background-color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 25px black;
 }
