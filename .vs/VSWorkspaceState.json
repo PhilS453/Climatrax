@@ -3,8 +3,9 @@
     "",
     "\\assets",
     "\\simplemaps_worldcities_basicv1",
-    "\\static"
+    "\\static",
+    "\\templates"
   ],
-  "SelectedNode": "\\climatrax.py",
+  "SelectedNode": "\\templates\\location.html",
   "PreviewInSolutionExplorer": false
 }
