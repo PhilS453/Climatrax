@@ -16,6 +16,8 @@ WILDFIRE_API_KEY = os.getenv('WILDFIRE_API_KEY')
 # Retrieve your API key from the .env file
 FIRMS_API_KEY = os.getenv('FIRMS_API_KEY')
 OPENCAGE_KEY = os.getenv('OPENCAGE_KEY')  # Assuming you have this in your .env
+print(f"Debug: OPENCAGE_KEY = {OPENCAGE_KEY}")
+print(f"Debug: FIRMS_API_KEY = {FIRMS_API_KEY}")
 
 class Climate:
     def get_coordinates(self, city_name):

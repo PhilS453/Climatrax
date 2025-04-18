@@ -3,6 +3,8 @@ countryName = document.getElementById("countryName");
 //"enter a country/city" text
 searchTitle = document.getElementById("searchTitle");
 
+
+
 //checks if user's search is valid
 var searchedCountry = false;
 //country JSON from getLocation()

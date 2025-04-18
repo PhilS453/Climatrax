@@ -59,7 +59,7 @@ def test_cities(cities):
 
 
 # List of cities to test
-cities_to_test = ['San Francisco', 'Los Angeles', 'New York', 'London', 'Paris', 'Tokyo', 'Sydney']
+#cities_to_test = ['San Francisco', 'Los Angeles', 'New York', 'London', 'Paris', 'Tokyo', 'Sydney']
 
 # Test the cities
-test_cities(cities_to_test)
+#test_cities(cities_to_test)
