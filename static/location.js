@@ -69,7 +69,8 @@ function displayWildfireResults(data) {
     if (data && data.length > 0) {
         let output = '<ul>';
         data.forEach(item => {
-            output += `<li>Wildfire at Lat: ${item.latitude}, Lon: ${item.longitude}, Confidence: ${item.confidence}% (Detected: ${item.acq_date})</li>`;
+            //output += `<li>Wildfire at Lat: ${item.latitude}, Lon: ${item.longitude}, Confidence: ${item.confidence}% (Detected: ${item.acq_date})</li>`;
+            output += `<li>Wildfire at <a href="https://www.google.com/maps/@${item.latitude},${item.longitude},12z" target="_blank">Lat: ${item.latitude}, Lon: ${item.longitude}</a>, Confidence: ${item.confidence}% (Detected: ${item.acq_date})</li>`;
         });
         output += '</ul>';
         resultsDiv.innerHTML = output;
