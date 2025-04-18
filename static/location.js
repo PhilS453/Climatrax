@@ -32,6 +32,7 @@ function loadWeatherPage()
     } else {
         console.error("No city found");
     }
+    //fetchWeatherData(city);
 }
 
 function fetchWildfireData(city) {
@@ -76,4 +77,8 @@ function displayWildfireResults(data) {
     } else {
         resultsDiv.textContent = 'No wildfire incidents found near this city.';
     }
+}
+
+function fetchWeatherData(city) {
+    //same idea as fetchWildfire. save it to a variable and i can update the html!
 }
