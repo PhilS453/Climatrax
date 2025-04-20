@@ -11,9 +11,14 @@ var searchedCountry = false;
 var countryData;
 
 //html onclick calls this; redirects to each location's weather page
-function redirect(location)
-{
-    window.location.href = `/location?city=${encodeURIComponent(location)}`;
+function redirect(cityObj) {
+    console.log("Redirecting with cityObj:", cityObj);
+    if (cityObj && cityObj.city && cityObj.lat && cityObj.lng) {
+        window.location.href = `/location?city=${encodeURIComponent(cityObj.city)}&lat=${encodeURIComponent(cityObj.lat)}&lng=${encodeURIComponent(cityObj.lng)}`;
+    } else {
+        console.error("Invalid city object or missing coordinates:", cityObj);
+        window.location.href = `/location?city=${encodeURIComponent(cityObj.city || '')}`;
+    }
 }
 
 //the flow is getLocation => searchLocation => displaySearchResults => fetchResults => displayResults
@@ -108,7 +113,7 @@ function createResultDivs(results)
         cityDiv.className = "resultContainer";
         cityDiv.textContent = city.city;
         cityDiv.style.color = "white";
-        cityDiv.onclick = () => redirect(city.city);
+        cityDiv.onclick = () => redirect(city);
         searchResults.appendChild(cityDiv);
     });
 }

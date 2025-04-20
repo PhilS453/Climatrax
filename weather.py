@@ -5,9 +5,10 @@ from datetime import datetime, timedelta
 from flask import jsonify
 
 load_dotenv()
-API_KEY = os.getenv("API_KEY")
+API_KEY = "136f7d00b3799a494559b6c02d0ee394"
 
-
+if not API_KEY:
+    print("Error: No API_KEY found in .env file")
 class Weather:
 
     #to start, i would try getting one of the APIs working (do the calls send valid JSONs?)
@@ -18,15 +19,25 @@ class Weather:
     
     #get current weather data from api
     @staticmethod
-    def getCurrentWeather():
-        lat = 42.3314
-        lon = -83.0458
+    def getCurrentWeather(lat,lng,city=None):
+    
+        if lat is None or lng is None:
+            print("No coordinates provided")
+            return None
+        try:
+            lat = float(lat)
+            lng = float(lng)
+        except (ValueError, TypeError):
+            print("Invalid coordinates provided")
+            return None
+        if not (-90 <= lat <= 90 and -180 <= lng <= 180):
+            print("Error: Not valid coordinates")
+            return None
         exclude = "minutely,alerts"
         units = "metric"
-
         url = (
             f"https://api.openweathermap.org/data/3.0/onecall?"
-            f"lat={lat}&lon={lon}&exclude={exclude}&units={units}&appid={API_KEY}"
+            f"lat={lat}&lon={lng}&exclude={exclude}&units={units}&appid={API_KEY}"
         )
 
         response = requests.get(url)
@@ -42,16 +53,25 @@ class Weather:
 
     #get historical weather data from api
     @staticmethod
-    def getWeatherHistory():
-        lat = 42.3314
-        lon = -83.0458
-        
+    def getWeatherHistory(lat,lng,city=None):
+        if lat is None or lng is None:
+            print("Error: No valid coordinates provided")
+            return None
+        try:
+            lat = float(lat)
+            lng = float(lng)
+        except (ValueError, TypeError):
+            print("Error: Invalid coordinate values")
+            return None
+        if not (-90 <= lat <= 90 and -180 <= lng <= 180):
+            print("Error: Coordinates out of valid range")
+            return None
         three_days_ago = datetime.utcnow() - timedelta(days=3)
         unix_time = int(three_days_ago.timestamp())
 
         url = (
             f"https://api.openweathermap.org/data/3.0/onecall/timemachine?"
-            f"lat={lat}&lon={lon}&dt={unix_time}&units=metric&appid={API_KEY}"
+            f"lat={lat}&lon={lng}&dt={unix_time}&units=metric&appid={API_KEY}"
         )
 
         response = requests.get(url)
@@ -80,8 +100,3 @@ class Weather:
         }
         return jsonify(result)
 
-
-if __name__ == "__main__":
-    weather_json = Weather.getCurrentWeather()
-    if weather_json:
-        print(weather_json["current"])

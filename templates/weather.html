@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climatrak - Location</title>
+    <title>Climatrak</title>
     <link rel="icon" href="/static/assets/favicon.png">
     <link rel="stylesheet" href="/static/styles.css">
 </head>
@@ -18,12 +18,16 @@
         <a href="/resources" class="navbutton">Resources</a>
     </nav>
 
-    <h2 id="cityName">Weather for [City]</h2>
-    <div id="weatherResults"></div>
-    <button id="wildfireBtn">Check Wildfires</button>
+    <div id="weatherContainer">
+        <div id="weatherTitle">Weather in Auburn Hills, Michigan</div>
+        <div id="tempText">30°F</div>
+        <div id="conditionText">Windy</div>
+    </div>
+
+    <button id="weatherBtn">Check Weather</button>
     <div id="wildfireResults"></div>
 
-    <script src="/static/weather.js" defer></script>
+
     <script src="/static/location.js" defer></script>
 </body>
 </html>

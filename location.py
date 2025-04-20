@@ -28,8 +28,8 @@ def search_location(query):
                 "city": location.get('city',''),
                 "state": location.get('state',''),
                 "country": location.get('country',''),
-                "longitude":location.get('lng',''),
-                "latitude":location.get('lat',''),
+                "lng":location.get('lng',''),
+                "lat":location.get('lat',''),
                 "population": location.get('population','')
             }
             results.append(result)
