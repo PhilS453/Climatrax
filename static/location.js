@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Update page title with city
 function loadWeatherPage() {
     if (city) {
-        document.getElementById("cityName").textContent = `Weather for ${city}`;
+        document.getElementById("weatherTitle").textContent = `Weather for ${city}`;
         console.log("Weather title updated:", city);
     } else {
         console.error("No city found");
@@ -87,7 +87,6 @@ function fetchWeatherData(lat, lng) {
 function displayWeatherResults(data) {
     const resultsDiv = document.getElementById("weatherResults");
     resultsDiv.innerHTML = `
-        <h3>Weather Data</h3>
         <p><strong>Temperature:</strong> ${data.temperature ? data.temperature + "°C" : "N/A"}</p>
         <p><strong>Feels Like:</strong> ${data.feels_like ? data.feels_like + "°C" : "N/A"}</p>
         <p><strong>Description:</strong> ${data.description || "N/A"}</p>
@@ -101,6 +100,9 @@ function displayWeatherResults(data) {
 // Wildfire button event listener
 const wildfireBtn = document.getElementById("wildfireBtn");
 wildfireBtn.addEventListener("click", () => {
+    //display warning and results containers when clicked
+    document.getElementById("wildfireResults").style.display = "flex";
+    document.getElementById("warningContainer").style.display = "flex";
     if (city) {
         console.log("Fetching wildfire data for:", city);
         fetchWildfireData(city);
@@ -146,7 +148,7 @@ function displayWildfireResults(data) {
     if (data && data.length > 0) {
         let output = '<ul>';
         data.forEach(item => {
-            output += `<li>Wildfire at <a href="https://www.google.com/maps/@${item.latitude},${item.longitude},11z" target="_blank">Lat: ${item.latitude}, Lon: ${item.longitude}</a>, Confidence: ${item.confidence}% (Detected: ${item.acq_date})</li>`;
+            output += `<li>Wildfire at <a href="https://www.google.com/maps/@${item.latitude},${item.longitude},11z" target="_blank">Lat: ${item.latitude}, Lon: ${item.longitude}</a></li>`;
         });
         output += '</ul>';
         resultsDiv.innerHTML = output;

@@ -24,8 +24,6 @@ def resources():
 def location():
     return render_template('location.html')
 
-
-
 # @app.route('/get_location',methods =['GET'])
 # def get_location():
 #     query = request.args.get('query')

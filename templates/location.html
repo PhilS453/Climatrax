@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climatrak - Location</title>
-    <link rel="icon" href="/static/assets/favicon.png">
-    <link rel="stylesheet" href="/static/styles.css">
+    <title>Climatrak</title>
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/static/location_style.css">
 </head>
 <body>
     <header>
-        <div id="head">🌍 Climatrak 🌍</div>
+        <img class="logo" src="/static/logo.png">
+        <div id="head">
+            <div id="climatrakTitle">Climatrak</div>
+            <div id="pageTitle">Search</div>
+        </div>
+        <img class="logo" src="/static/logo.png">
     </header>
 
     <nav id="navbar">
@@ -18,12 +23,17 @@
         <a href="/resources" class="navbutton">Resources</a>
     </nav>
 
-    <h2 id="cityName">Weather for [City]</h2>
-    <div id="weatherResults"></div>
-    <button id="wildfireBtn">Check Wildfires</button>
-    <div id="wildfireResults"></div>
+    <div id="weatherContainer">
+        <h id="weatherTitle">No location found.</h>
+        <div id="weatherResults"></div>
+    </div>
 
-    <script src="/static/weather.js" defer></script>
+    <button id="wildfireBtn">Check Wildfires</button>
+    <div id="warningContainer" style="display: none">
+        Warning: by clicking these links you are leaving the Climatrak website.
+    </div>
+    <div id="wildfireResults" style="display: none"></div>
+
     <script src="/static/location.js" defer></script>
 </body>
 </html>

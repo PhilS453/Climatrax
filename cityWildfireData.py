@@ -33,7 +33,7 @@ def get_wildfire_data_for_city(city_name):
     # Directly format the bounding box as a string (no URL encoding)
     bbox_raw = f"{west:.4f},{south:.4f},{east:.4f},{north:.4f}"
 
-    url = f'https://firms.modaps.eosdis.nasa.gov/api/area/csv/{FIRMS_API_KEY}/VIIRS_NOAA20_NRT/{bbox_raw}/3'
+    url = f'https://firms.modaps.eosdis.nasa.gov/api/area/csv/84b2a8637a2cb8e1d0ac1ca0f54593b7/VIIRS_NOAA20_NRT/{bbox_raw}/3'
     
     print(f"🔗 API URL for {city_name}: {url}")  # Debug output
 
