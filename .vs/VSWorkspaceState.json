@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\assets",
-    "\\simplemaps_worldcities_basicv1",
-    "\\static",
-    "\\templates"
+    ""
   ],
-  "SelectedNode": "\\climatrax.py",
+  "SelectedNode": "\\static",
   "PreviewInSolutionExplorer": false
 }
