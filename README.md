@@ -1,19 +1,19 @@
 
 
-Welcome to Climatrax, an application designed to provide climate-related insights for cities around the world.
-
-# Overview
-Climatrax allows users to search through a dataset of approximately 47,000 cities globally and access information on:
-- Flooding risks
-- Drought conditions
-- Wildfire potential
-
-Popular and trusted API's are used and listed below:
-- name of drought api
-- name of flood api
-- name of wildfire api
 
 # Getting Started
--directions to pull from git 
--directions to run the application
--actual step by step instructions once on the application
+
+1) Pull the repo in a folder using this link https://github.com/PhilS453/Climatrax.git
+2) Navigate to the project folder inside a Command Prompt Window
+   1) Run python -m venv venv (Windows)
+   2) Run python3 -m venv venv(Mac)
+       1) Using a virtual environment is always recommended
+3) Activate the virtual environment
+   1) Run venv\Scripts\activate(Windows)
+   2) Run source venv/bin/activate (Unix)
+        1) You will see now a (venv) before the prompt
+4) Run pip install -r requirements.txt
+   1) This installs all dependencies and is common practice
+5) Run python Climatrax.py (Window) Or python3 Climatrax.py(Unix)
+6) Climatrax is now running. Visit http://127.0.0.1:5000/ which is our homepage
+7) Enjoy! :)
